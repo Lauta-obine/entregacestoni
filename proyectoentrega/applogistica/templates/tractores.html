@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+
+{% block  title %} Tractores {% endblock %}
+
+{% block content %}
+
+<H5>Tractores</H5>
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Patente Tractor</th>
+        <th scope="col">Marca </th>
+        <th scope="col">Año</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+
+    {% for tractor in tractores %}
+      <tr>
+        <td>{{ tractor.patente }}</td>
+        <td>{{ tractor.marca }}</td>
+        <td>{{ tractor.ano }}</td>
+      </tr>
+     {% endfor %} 
+  
+    </tbody>
+
+  </table>
+  <a class="btn btn-primary" href="{% url 'tractor_formulario' %}" role="button">AGREGAR</a>
+  <a class="btn btn-secondary" href="{% url 'buscar_tractor' %}" role="button">BUSCAR</a>
+ 
+
+ 
+    
+{% endblock %}

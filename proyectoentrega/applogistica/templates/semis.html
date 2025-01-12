@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+
+{% block  title %} Semis {% endblock %}
+
+{% block content %}
+
+<H5>Semirremoles</H5>
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Patente Semirremolque</th>
+        <th scope="col">Marca </th>
+        <th scope="col">Tipo </th>
+        <th scope="col">Año</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+
+    {% for semi in semis %}
+      <tr>
+        <td>{{ semi.patente }}</td>
+        <td>{{ semi.marca }}</td>
+        <td>{{ semi.tipo }}</td>
+        <td>{{ semi.ano }}</td>
+      </tr>
+     {% endfor %} 
+  
+    </tbody>
+
+  </table>
+  <a class="btn btn-primary" href="{% url 'semi_formulario' %}" role="button">AGREGAR</a>
+  <a class="btn btn-secondary" href="{% url 'buscar_semi' %}" role="button">BUSCAR</a>
+ 
+
+ 
+    
+{% endblock %}

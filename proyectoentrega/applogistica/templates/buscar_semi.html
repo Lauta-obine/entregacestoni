@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block  title %} Buscar Semis {% endblock %}
+
+{% block content %}
+<h5>Buscar Semis por Tipo </h5>
+ 
+<form method="GET" action="{% url 'buscar_semi' %}">
+    <input type="text" name="busquedastipo" value="{{ query }}" placeholder="Buscar Tipo" required>
+    <button type="submit">Buscar</button>
+</form>
+
+<h6>Resultados de la búsqueda...</h6>
+{% if semis %}
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+            <th scope="col">Patente Tractor</th>
+            <th scope="col">Marca </th>
+            <th scope="col">Tipo </th>
+            <th scope="col">Año</th>
+    
+            </tr>
+        </thead>
+        <tbody>
+
+        {% for semi in semis %}
+            <tr>
+            <td>{{ semi.patente }}</td>
+            <td>{{ semi.marca }}</td>
+            <td>{{ semi.tipo }}</atd>
+            <td>{{ semi.ano }}</td>
+            </tr>
+        {% endfor %} 
+
+        </tbody>
+
+    </table>
+{% else %}
+    <p>No se encontraron semis de ese tipo...</p>
+{% endif %}
+  
+ 
+
+{% endblock %}
