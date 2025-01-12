@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %}
+
+{% block  title %} Choferes {% endblock %}
+
+{% block content %}
+
+<H5>Choferes</H5>
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">DNI</th>
+        <th scope="col">Nombre </th>
+    
+      </tr>
+    </thead>
+    <tbody>
+
+    {% for chofer in choferes %}
+      <tr>
+        <td>{{ chofer.dni }}</td>
+        <td>{{ chofer.nombre }}</td>
+   
+      </tr>
+     {% endfor %} 
+  
+    </tbody>
+
+  </table>
+  <a class="btn btn-primary" href="{% url 'chofer_formulario' %}" role="button">AGREGAR</a>
+  
+ 
+
+ 
+    
+{% endblock %}

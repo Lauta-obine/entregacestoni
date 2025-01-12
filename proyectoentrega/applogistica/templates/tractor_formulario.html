@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% block  title %} Nuevo tractor {% endblock %}
+
+{% block content %}
+<h5>Nuevo Tractor</h5>
+ 
+<form  action="{% url  'tractor_formulario' %}" method="POST">{% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit" class="btn btn-outline-success">Guardar</button>
+  
+  
+ 
+
+{% endblock %}

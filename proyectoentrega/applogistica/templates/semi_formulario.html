@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% block  title %} Nuevo Semi{% endblock %}
+
+{% block content %}
+<h5>Nuevo Semirremolque</h5>
+ 
+<form  action="{% url  'semi_formulario' %}" method="POST">{% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit" class="btn btn-outline-success">Guardar</button>
+  
+  
+ 
+
+{% endblock %}
